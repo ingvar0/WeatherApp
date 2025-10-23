@@ -1,0 +1,171 @@
+
+/* ОБЩИЕ СТИЛИ */
+
+p {
+    font-size: 18px;
+    color: #FFFFFF;
+}
+
+h3 {
+    font-size: 20px;
+    color: #FFFFFF;
+}
+
+.hide {
+    display: none;
+}
+
+body {
+    background-image: url(/images/main-section/bg-winter.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    position: relative;
+    width: 1250px;
+    margin: 0 auto;
+}
+
+
+
+/* СЕКЦИЯ О КРАТКОЙ ИНФОЙ О ПОГОДЕ */
+
+
+.weather-main {
+    height: 100vh;
+}
+
+.main__container {
+    position: absolute;
+    left: 0;
+    bottom: 85px;
+    display: flex;
+    align-items: center;
+}
+
+.main__temp {
+    margin-right: 10px;
+
+    font-size: 143px;
+    color: #FFFFFF;
+    font-weight: 400;
+}
+
+.main__cityDate {
+    margin-right: 10px;
+}
+
+.main__cityDate h1 {
+    font-size: 60px;
+    color: #FFFFFF;
+    font-weight: 400;
+
+}
+
+.main__icon {
+    height: 70px;
+    width: 70px;
+}
+
+
+
+/* Секция с ПОИСКОМ */
+
+
+.search__container {
+    position: absolute;
+    right: 0px;
+    top: 60px;
+}
+
+.search__main {
+    position: relative;
+    width: 371px;
+    height: 50px;
+
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #FFFFFF;
+}
+
+.search__main:placeholder {
+    font-size: 20px;
+    font-weight: 400;
+    opacity: 0.7;
+    padding: 13px 0;
+}
+
+.search__container img {
+    position: absolute;
+    right: 17px;
+    top: 9px;
+}
+
+
+
+/* Секция с подробной инфой о погоде */
+
+
+
+.weather-details{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 520px;   
+    height: 100vh;
+    background-color: rgba(166, 166, 166, 0.5); /* полупрозрачная линия */
+    backdrop-filter: blur(10px); /* лёгкий эффект стекла */
+    -webkit-backdrop-filter: blur(4px);
+    pointer-events: none; /* чтобы не мешала кликам */
+}
+
+.details__container {
+    width: 354px;
+    display: flex;
+    flex-direction: column;
+}
+
+.details__title {
+    margin-top: 177px;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-bottom: 50px;
+    text-align: center;
+    position: relative; /* для псевдоэлемента */
+}
+
+.details__title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 500px;
+    width: 355px;
+    border: 1px solid #FFFFFF;
+}
+
+.details__section {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.detail {
+    display: flex;
+    justify-content: space-between;
+}
+
+.detail__desc {
+    opacity: 0.7;
+}
+
+.details__temp-icon {
+    display: flex;
+}
+
+.details__temp-icon img {
+    max-width: 24px;
+    max-height: 26px;
+}

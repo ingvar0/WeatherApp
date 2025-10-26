@@ -15,7 +15,7 @@ h3 {
 }
 
 body {
-    background-image: url(/images/main-section/bg-winter.png);
+    background-image: url(https://i.pinimg.com/1200x/6b/e5/d0/6be5d0a5a362645b003d16235f4672f7.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -56,7 +56,7 @@ body {
 .main__temp {
     margin-right: 10px;
 
-    font-size: 143px;
+    font-size: 125px;
     color: #FFFFFF;
     font-weight: 400;
 }
@@ -90,10 +90,16 @@ body {
     position: relative;
     width: 371px;
     height: 50px;
-
     background: transparent;
     border: 0;
     border-bottom: 1px solid #FFFFFF;
+
+    color: #FFFFFF;
+}
+
+.search__main:focus {
+    outline: none;
+    box-shadow: none;
 }
 
 .search__main::placeholder {

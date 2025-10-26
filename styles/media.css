@@ -1,10 +1,46 @@
 @media(max-width: 1150px) {
+    /* Секция с блюром (вертикально) */
+    .weather-details {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 520px;   
+        height: 65vh;
+        background: transparent;
+        backdrop-filter: none; /* ← УБИРАЕМ блюр отсюда! */
+        box-shadow: none; 
+        overflow: hidden;
+    }
+
+    .details__section {
+        z-index: 2;
+    }
+
+    .weather-details::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        backdrop-filter: blur(15px);
+        mask-image: linear-gradient(
+            to bottom,
+            transparent 0%,
+            black 15%,
+            black 100%
+        );
+        -webkit-mask-image: linear-gradient(
+            to bottom,
+            transparent 0%,
+            black 15%,
+            black 100%
+        );
+        box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    }
 
     /* ОБЩИЕ СТИЛИ */
 
-    body {
+    /* body {
         background-image: url(/images/main-section/bg-weather.png);
-    }
+    } */
 
     p {
         font-size: 16px;
@@ -23,11 +59,10 @@
     /* СЕКЦИЯ О КРАТКОЙ ИНФОЙ О ПОГОДЕ */
 
     .main__container {
-        left: 0;
-        top: -350px;
+        bottom: 65%;
     }
     .main__temp {
-        font-size: 115px;
+        font-size: 85px;
     }
 
     .main__cityDate h1 {
@@ -65,8 +100,8 @@
     /* Секция с подробной инфой о погоде */
 
     .weather-details{
-        position: relative;
-        margin-top: -650px;
+        position: absolute;
+
         width: 100%;
         max-width: 1300px;
     }
@@ -88,11 +123,12 @@
 
 
 @media(max-width: 680px) {
+
     /* ОБЩИЕ СТИЛИ */
 
-    body {
+    /* body {
         background-image: url(/images/main-section/bg-weather3.png);
-    }
+    } */
 
     p {
         font-size: 13px;
@@ -110,12 +146,12 @@
     /* СЕКЦИЯ О КРАТКОЙ ИНФОЙ О ПОГОДЕ */
 
     .main__container {
-        left: -90px;
-        top: -500px;
+
+        right: 0;
     }
 
     .main__temp {
-        font-size: 69px;
+        font-size: 55px;
     }
 
     .main__cityDate h1 {
@@ -172,11 +208,110 @@
     .details__title::after {
         top: 400px;
     }
+
+    .details__container {
+        width: 295px;
+
+    }
 }
 
 
-@media(max-width: 400px) {
+@media(max-width: 550px) {
+
+    /* ОБЩИЕ СТИЛИ */
+
+    p {
+        font-size: 9px;
+        color: #FFFFFF;
+    }
+
+    h3 {
+        font-size: 12px;
+    }
+
     .container {
-        max-width: 100px;
+        max-width: 300px;
+    }
+
+    /* СЕКЦИЯ О КРАТКОЙ ИНФОЙ О ПОГОДЕ */
+
+    .main__container {
+        min-width: 200px;
+    }
+
+    .main__temp {
+        font-size: 40px;
+    }
+
+    .main__cityDate h1 {
+        font-size: 20px;
+    }
+
+    .main__date {
+        font-size: 9px;
+    }
+
+    .main__icon {
+        height: 30px;
+        width: 30px;
+    }
+
+    /* Секция с ПОИСКОМ */
+
+    .search__container {
+        position: absolute;
+        left: 180px;
+        width: 100px;
+    }
+
+    .search__main {
+        width: 100px;
+        height: 15px;
+    }
+
+    .search__main::placeholder {
+        font-size: 10px;
+    }
+
+    .search__container img {
+        left: 87px;
+        width: 10px;
+        height: 10px;
+    }
+
+
+    /* Секция с подробной инфой о погоде */
+
+
+    .details__title {
+        margin-top: 125px;
+        text-transform: uppercase;
+        font-weight: 400;
+        margin-bottom: 50px;
+        text-align: center;
+        position: relative; /* для псевдоэлемента */
+    }
+
+    .details__title::after {
+        top: 300px;
+        width: 200px;
+    }
+
+    .details__container {
+        width: 210px;
+    }
+
+    .details__section {
+        gap: 15px;
+    }
+
+    .details__temp-icon img {
+        max-width: 18px;
+        max-height: 20px;
+    }
+
+    .details__title {
+        margin-top: 90px;
+        margin-bottom: 60px;
     }
 }
